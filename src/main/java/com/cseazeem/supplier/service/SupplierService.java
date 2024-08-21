@@ -1,0 +1,21 @@
+package com.cseazeem.supplier.service;
+
+import com.cseazeem.supplier.database.SupplierDaoImpl;
+import com.cseazeem.supplier.entity.Supplier;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class SupplierService {
+
+    private final SupplierDaoImpl supplierDaoImpl;
+
+    public SupplierService(SupplierDaoImpl supplierDaoImpl) {
+        this.supplierDaoImpl = supplierDaoImpl;
+    }
+
+    public List<Supplier> searchSuppliers(String location, Supplier.NatureOfBusiness natureOfBusiness, Supplier.ManufacturingProcesses manufacturingProcess, int pageNo, int pageSize) {
+        return supplierDaoImpl.searchSuppliers(location, natureOfBusiness, manufacturingProcess, pageNo, pageSize);
+    }
+}
