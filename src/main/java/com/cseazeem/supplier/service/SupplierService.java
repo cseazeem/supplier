@@ -20,7 +20,7 @@ public class SupplierService {
         List<Supplier> suppliers = supplierDaoImpl.searchSuppliers(location, natureOfBusiness, manufacturingProcess, limit, offset);
 
         if (suppliers.isEmpty()) {
-            throw new SupplierNotFoundException("No suppliers found with the given criteria");
+            throw new SupplierNotFoundException("No suppliers found with the given criteria.");
         }
 
         return suppliers;
